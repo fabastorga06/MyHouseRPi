@@ -1,0 +1,10 @@
+*** Este archivo se mueve a /etc/systemd/system
+*** Borrar estos comentarios ***
+[Unit]
+Description=my house startup
+
+[Service]
+ExecStart=/usr/local/sbin/myhouse.sh
+
+[Install]
+WantedBy=multi-user.target

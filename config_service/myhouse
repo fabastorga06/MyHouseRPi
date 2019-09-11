@@ -1,0 +1,9 @@
+# este archivo se mueve a /usr/local/sbin
+#!/bin/sh
+
+NAME=MyHouse
+PATH=/home/$NAME
+
+printf "%-50s" "Starting $NAME..."
+cd $PATH
+./MyHouse
