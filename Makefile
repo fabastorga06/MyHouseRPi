@@ -6,7 +6,7 @@ CC = gcc
 
 EXEC = MyHouse
 
-_DEPS = libmanager.h
+_DEPS = libmanager.h constants.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = $(EXEC).o

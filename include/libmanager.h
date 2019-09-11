@@ -1,8 +1,11 @@
 #ifndef _LIBMANAGER_H
 #define _LIBMANAGER_H
 
-#define GPIO1 1
-#define GPIO2 2
-#define GPIO3 3
+void exportPin(char* pin );
+void unexportPin(char* pin ) ;
+void pinMode (char* pin, char* MODE );
+void digitalWrite(char* pin, char* value );
+int digitalRead(char* pin);
+void blink(char* pin, int freq, unsigned int duration);
 
 #endif
