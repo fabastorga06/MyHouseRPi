@@ -36,10 +36,10 @@
 #define AMOUNT_LIGHTS 5
 #define AMOUNT_DOORS 4
 
-#define DOOR1 1
-#define DOOR2 2
-#define DOOR3 3
-#define DOOR4 4
+#define DOOR1 6
+#define DOOR2 7
+#define DOOR3 8
+#define DOOR4 9
 
 /****** GPIO Pins *******/
 #define LIGHT1_GPIO "2"

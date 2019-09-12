@@ -32,7 +32,7 @@ void make_house_report(char* rep)
         }
     }
 
-    for (int j = 0; j < AMOUNT_DOORS; ++j) {
+    for (int j = AMOUNT_DOORS+1; j < REPORT_SIZE; ++j) {
         if ( door_report(j+1) ) {
             rep[j] = '1';
         } else {
@@ -53,7 +53,6 @@ void house_alert(int socket, char* report)
 
 int main(int argc, char** argv ) 
 { 
-
     if (argc == 1) {
         puts("Error: insert port number");
         return 0;
@@ -184,9 +183,8 @@ int main(int argc, char** argv )
                 break;
         }
 
-        sleep(1);        
+        sleep(0.5);        
     }
-
     disable_lights();
     disable_doors();
     close(my_house_socket);
