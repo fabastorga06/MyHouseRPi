@@ -1,27 +1,24 @@
- /**********************/
- /*    GPIO Library    */
-/***********************/
+ /****************************************/
+ /*            GPIO Library              */
+/*****************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#include "../include/gpio_handler.h"
 
- void exportPin(char* pin ) {
+ void exportPin(char* pin) {
     char cmd[64] = "echo ";
     strcat(cmd, pin);
     strcat(cmd, " > /sys/class/gpio/export");
     system(cmd);
 }
 
-void unexportPin(char* pin ) {    
+void unexportPin(char* pin) {    
     char cmd[64] = "echo ";
     strcat(cmd, pin);
     strcat(cmd, " > /sys/class/gpio/unexport");
     system(cmd);
 }
 
-void pinMode (char* pin, char* MODE ) {    
+void pinMode (char* pin, char* MODE) {    
     char cmd[64] = "echo ";
 	strcat(cmd, MODE);
 	strcat(cmd, " > /sys/class/gpio/gpio");
@@ -31,7 +28,7 @@ void pinMode (char* pin, char* MODE ) {
 
 }
 
-void digitalWrite(char* pin, char* value ) {
+void digitalWrite(char* pin, char* value) {
     char cmd[64] = "echo ";
     strcat(cmd, value);
     strcat(cmd, " > /sys/class/gpio/gpio");
@@ -41,21 +38,18 @@ void digitalWrite(char* pin, char* value ) {
 }
 
 int digitalRead(char* pin) {
-
     char cmd[64] = "cat /sys/class/gpio/gpio";
     strcat(cmd, pin);
     strcat(cmd, "/value");
     FILE* f = popen(cmd, "r");
-    char data[32] ;
-    fgets( data, sizeof(data), f );
-	fclose( f );
-	int pin_value = atoi( data );
+    char data[32];
+    fgets(data, sizeof(data), f);
+	fclose(f);
+	int pin_value = atoi(data);
 	return pin_value;
-
 }
 
 void blink(char* pin, int freq, unsigned int duration) {
-
     for(int i = 0; i < freq ; ++i) {
         digitalWrite(pin, "1");
         sleep(duration);

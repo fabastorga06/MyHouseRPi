@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/crimsonking/Desktop/MyHouseRPi
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -83,7 +95,7 @@ install/fast: preinstall/fast
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	/usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/crimsonking/Desktop/MyHouseRPi && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -94,25 +106,13 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/crimsonking/Desktop/MyHouseRPi/CPackSourceConfig.cmake
+	cd /home/crimsonking/Desktop/MyHouseRPi && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/crimsonking/Desktop/MyHouseRPi/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
 package_source/fast: package_source
 
 .PHONY : package_source/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -148,14 +148,14 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles /home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/progress.marks
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f CMakeFiles/Makefile2 lib/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f CMakeFiles/Makefile2 lib/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,71 +165,114 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named MyHouse
+# Convenience name for target.
+lib/CMakeFiles/libmyhouserpi.dir/rule:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/libmyhouserpi.dir/rule
+.PHONY : lib/CMakeFiles/libmyhouserpi.dir/rule
 
-# Build rule for target.
-MyHouse: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MyHouse
-.PHONY : MyHouse
+# Convenience name for target.
+libmyhouserpi: lib/CMakeFiles/libmyhouserpi.dir/rule
 
-# fast build rule for target.
-MyHouse/fast:
-	$(MAKE) -f CMakeFiles/MyHouse.dir/build.make CMakeFiles/MyHouse.dir/build
-.PHONY : MyHouse/fast
-
-#=============================================================================
-# Target rules for targets named libmyhouserpi
-
-# Build rule for target.
-libmyhouserpi: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libmyhouserpi
 .PHONY : libmyhouserpi
 
 # fast build rule for target.
 libmyhouserpi/fast:
-	$(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/build
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/build
 .PHONY : libmyhouserpi/fast
 
-main.o: main.c.o
+door_handler.o: door_handler.c.o
 
-.PHONY : main.o
+.PHONY : door_handler.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/MyHouse.dir/build.make CMakeFiles/MyHouse.dir/main.c.o
-.PHONY : main.c.o
+door_handler.c.o:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/door_handler.c.o
+.PHONY : door_handler.c.o
 
-main.i: main.c.i
+door_handler.i: door_handler.c.i
 
-.PHONY : main.i
+.PHONY : door_handler.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/MyHouse.dir/build.make CMakeFiles/MyHouse.dir/main.c.i
-.PHONY : main.c.i
+door_handler.c.i:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/door_handler.c.i
+.PHONY : door_handler.c.i
 
-main.s: main.c.s
+door_handler.s: door_handler.c.s
 
-.PHONY : main.s
+.PHONY : door_handler.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/MyHouse.dir/build.make CMakeFiles/MyHouse.dir/main.c.s
-.PHONY : main.c.s
+door_handler.c.s:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/door_handler.c.s
+.PHONY : door_handler.c.s
+
+gpio_handler.o: gpio_handler.c.o
+
+.PHONY : gpio_handler.o
+
+# target to build an object file
+gpio_handler.c.o:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/gpio_handler.c.o
+.PHONY : gpio_handler.c.o
+
+gpio_handler.i: gpio_handler.c.i
+
+.PHONY : gpio_handler.i
+
+# target to preprocess a source file
+gpio_handler.c.i:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/gpio_handler.c.i
+.PHONY : gpio_handler.c.i
+
+gpio_handler.s: gpio_handler.c.s
+
+.PHONY : gpio_handler.s
+
+# target to generate assembly for a file
+gpio_handler.c.s:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/gpio_handler.c.s
+.PHONY : gpio_handler.c.s
+
+light_handler.o: light_handler.c.o
+
+.PHONY : light_handler.o
+
+# target to build an object file
+light_handler.c.o:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/light_handler.c.o
+.PHONY : light_handler.c.o
+
+light_handler.i: light_handler.c.i
+
+.PHONY : light_handler.i
+
+# target to preprocess a source file
+light_handler.c.i:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/light_handler.c.i
+.PHONY : light_handler.c.i
+
+light_handler.s: light_handler.c.s
+
+.PHONY : light_handler.s
+
+# target to generate assembly for a file
+light_handler.c.s:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/light_handler.c.s
+.PHONY : light_handler.c.s
 
 # Help Target
 help:
@@ -237,19 +280,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... package"
 	@echo "... package_source"
-	@echo "... install/strip"
-	@echo "... MyHouse"
+	@echo "... libmyhouserpi"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
-	@echo "... libmyhouserpi"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... door_handler.o"
+	@echo "... door_handler.i"
+	@echo "... door_handler.s"
+	@echo "... gpio_handler.o"
+	@echo "... gpio_handler.i"
+	@echo "... gpio_handler.s"
+	@echo "... light_handler.o"
+	@echo "... light_handler.i"
+	@echo "... light_handler.s"
 .PHONY : help
 
 
@@ -261,6 +309,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
