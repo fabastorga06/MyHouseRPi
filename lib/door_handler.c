@@ -1,12 +1,12 @@
 #include "../include/door_handler.h"
 
-void enable_doors(){
+void enable_doors()
+{
     /* enable gpio doors */
     exportPin(DOOR1_GPIO);
     exportPin(DOOR2_GPIO);
     exportPin(DOOR3_GPIO);
     exportPin(DOOR4_GPIO);
-
     /* change door mode to in */
     pinMode(DOOR1_GPIO, IN);
     pinMode(DOOR2_GPIO, IN);
@@ -14,7 +14,8 @@ void enable_doors(){
     pinMode(DOOR4_GPIO, IN);
 }
 
-void disable_doors() {
+void disable_doors() 
+{
     /* disable gpio doors */
     unexportPin(DOOR1_GPIO);
     unexportPin(DOOR2_GPIO);
@@ -22,17 +23,23 @@ void disable_doors() {
     unexportPin(DOOR4_GPIO);
 }
 
-int read_door_status(char* gpio) {
+int read_door_status(char* gpio) 
+{
    return digitalRead(gpio);
 }
 
-char* generate_doors_report(char* status) {
-    char* door = (digitalRead(DOOR1_GPIO)) ? ON: OFF;
-    strcat(status, door);
-    door = (digitalRead(DOOR2_GPIO)) ? ON: OFF;
-    strcat(status, door);
-    door = (digitalRead(DOOR3_GPIO)) ? ON: OFF;
-    strcat(status, door);
-    door = (digitalRead(DOOR4_GPIO)) ? ON: OFF;
-    strcat(status, door);
+int door_report(unsigned int door)
+{
+    switch (door)  {
+    case DOOR1:
+        return digitalRead(DOOR1_GPIO);
+    case DOOR2:
+        return digitalRead(DOOR2_GPIO);
+    case DOOR3:
+        return digitalRead(DOOR3_GPIO);
+    case DOOR4:
+        return digitalRead(DOOR4_GPIO);
+    default: 
+        break;
+    }    
 }

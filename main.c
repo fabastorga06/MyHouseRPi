@@ -9,7 +9,8 @@
 #include "../include/light_handler.h"
 #include "../include/door_handler.h"
 
-void light_manager(int socket, char* gpio, unsigned short on) {
+void light_manager(int socket, char* gpio, unsigned short on)
+{
     if (on) {
         turn_light_on(gpio);
     } else {
@@ -21,19 +22,37 @@ void light_manager(int socket, char* gpio, unsigned short on) {
     }
 }
 
-void house_alert(int socket) {
+void make_house_report(char* rep)
+{
+    for (int i = 0; i < AMOUNT_LIGHTS; ++i) {
+        if ( light_report(i+1) ) {
+            rep[i] = '1';
+        } else {
+            rep[i] = '0';
+        }
+    }
+
+    for (int j = 0; j < AMOUNT_DOORS; ++j) {
+        if ( door_report(j+1) ) {
+            rep[j] = '1';
+        } else {
+            rep[j] = '0';
+        }
+    }    
+}
+
+void house_alert(int socket, char* report)
+{
     puts("Generating house report...");
-    char final_report[REPORT_SIZE];
-    char lights_report[AMOUNT_LIGHTS];
-    char doors_report[AMOUNT_DOORS];
-    strcat( final_report, generate_lights_report(lights_report));
-    strcat( final_report, generate_doors_report(doors_report));    
-    if (write(socket, final_report, REPORT_SIZE) < 0) {
+    make_house_report(report);
+
+    if (write(socket, report, REPORT_SIZE) < 0) {
         perror("Writing on socket failed.");
     }
 }
 
-int main(int argc, char** argv ) { 
+int main(int argc, char** argv ) 
+{ 
 
     if (argc == 1) {
         puts("Error: insert port number");
@@ -46,6 +65,7 @@ int main(int argc, char** argv ) {
     int opt = 1; 
     int addrlen = sizeof(address); 
     char msg_rcv[BUFFER_SIZE] = {0}; 
+    char* house_report = malloc( sizeof(char) * REPORT_SIZE);
        
     /****************** Create socket ********************************/
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)  { 
@@ -153,7 +173,7 @@ int main(int argc, char** argv ) {
             /******************** DOORS STATUS OPEN/CLOSE ******************************/
             case HOUSE_STATUS:
                 puts("Door 1 OPEN\n");
-                house_alert(my_house_socket);            
+                house_alert(my_house_socket, house_report);            
                 break;         
 
             /*********************** WEBCAM ***********************************/

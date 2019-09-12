@@ -7,6 +7,6 @@
 void enable_doors();
 void disable_doors();
 int read_door_status(char* gpio);
-char* generate_doors_report();
+int door_report(unsigned int door);
 
 #endif
