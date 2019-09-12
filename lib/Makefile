@@ -179,19 +179,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-lib/CMakeFiles/libmyhouserpi.dir/rule:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/libmyhouserpi.dir/rule
-.PHONY : lib/CMakeFiles/libmyhouserpi.dir/rule
+lib/CMakeFiles/myhouserpi.dir/rule:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/myhouserpi.dir/rule
+.PHONY : lib/CMakeFiles/myhouserpi.dir/rule
 
 # Convenience name for target.
-libmyhouserpi: lib/CMakeFiles/libmyhouserpi.dir/rule
+myhouserpi: lib/CMakeFiles/myhouserpi.dir/rule
 
-.PHONY : libmyhouserpi
+.PHONY : myhouserpi
 
 # fast build rule for target.
-libmyhouserpi/fast:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/build
-.PHONY : libmyhouserpi/fast
+myhouserpi/fast:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/build
+.PHONY : myhouserpi/fast
 
 door_handler.o: door_handler.c.o
 
@@ -199,7 +199,7 @@ door_handler.o: door_handler.c.o
 
 # target to build an object file
 door_handler.c.o:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/door_handler.c.o
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/door_handler.c.o
 .PHONY : door_handler.c.o
 
 door_handler.i: door_handler.c.i
@@ -208,7 +208,7 @@ door_handler.i: door_handler.c.i
 
 # target to preprocess a source file
 door_handler.c.i:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/door_handler.c.i
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/door_handler.c.i
 .PHONY : door_handler.c.i
 
 door_handler.s: door_handler.c.s
@@ -217,7 +217,7 @@ door_handler.s: door_handler.c.s
 
 # target to generate assembly for a file
 door_handler.c.s:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/door_handler.c.s
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/door_handler.c.s
 .PHONY : door_handler.c.s
 
 gpio_handler.o: gpio_handler.c.o
@@ -226,7 +226,7 @@ gpio_handler.o: gpio_handler.c.o
 
 # target to build an object file
 gpio_handler.c.o:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/gpio_handler.c.o
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/gpio_handler.c.o
 .PHONY : gpio_handler.c.o
 
 gpio_handler.i: gpio_handler.c.i
@@ -235,7 +235,7 @@ gpio_handler.i: gpio_handler.c.i
 
 # target to preprocess a source file
 gpio_handler.c.i:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/gpio_handler.c.i
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/gpio_handler.c.i
 .PHONY : gpio_handler.c.i
 
 gpio_handler.s: gpio_handler.c.s
@@ -244,7 +244,7 @@ gpio_handler.s: gpio_handler.c.s
 
 # target to generate assembly for a file
 gpio_handler.c.s:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/gpio_handler.c.s
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/gpio_handler.c.s
 .PHONY : gpio_handler.c.s
 
 light_handler.o: light_handler.c.o
@@ -253,7 +253,7 @@ light_handler.o: light_handler.c.o
 
 # target to build an object file
 light_handler.c.o:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/light_handler.c.o
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/light_handler.c.o
 .PHONY : light_handler.c.o
 
 light_handler.i: light_handler.c.i
@@ -262,7 +262,7 @@ light_handler.i: light_handler.c.i
 
 # target to preprocess a source file
 light_handler.c.i:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/light_handler.c.i
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/light_handler.c.i
 .PHONY : light_handler.c.i
 
 light_handler.s: light_handler.c.s
@@ -271,7 +271,7 @@ light_handler.s: light_handler.c.s
 
 # target to generate assembly for a file
 light_handler.c.s:
-	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/light_handler.c.s
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/light_handler.c.s
 .PHONY : light_handler.c.s
 
 # Help Target
@@ -285,7 +285,7 @@ help:
 	@echo "... install"
 	@echo "... package"
 	@echo "... package_source"
-	@echo "... libmyhouserpi"
+	@echo "... myhouserpi"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"

@@ -90,7 +90,7 @@ MyHouse_EXTERNAL_OBJECTS =
 
 MyHouse: CMakeFiles/MyHouse.dir/main.c.o
 MyHouse: CMakeFiles/MyHouse.dir/build.make
-MyHouse: lib/liblibmyhouserpi.so
+MyHouse: lib/libmyhouserpi.so
 MyHouse: CMakeFiles/MyHouse.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/crimsonking/Desktop/MyHouseRPi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable MyHouse"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyHouse.dir/link.txt --verbose=$(VERBOSE)

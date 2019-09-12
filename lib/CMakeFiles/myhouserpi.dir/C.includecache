@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/crimsonking/Desktop/MyHouseRPi/include/constants.h
+
+/home/crimsonking/Desktop/MyHouseRPi/include/door_handler.h
+../include/constants.h
+/home/crimsonking/Desktop/MyHouseRPi/include/constants.h
+../include/gpio_handler.h
+/home/crimsonking/Desktop/MyHouseRPi/include/gpio_handler.h
+
+/home/crimsonking/Desktop/MyHouseRPi/include/gpio_handler.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+
+/home/crimsonking/Desktop/MyHouseRPi/include/light_handler.h
+../include/constants.h
+/home/crimsonking/Desktop/MyHouseRPi/include/constants.h
+../include/gpio_handler.h
+/home/crimsonking/Desktop/MyHouseRPi/include/gpio_handler.h
+
+/home/crimsonking/Desktop/MyHouseRPi/lib/door_handler.c
+../include/door_handler.h
+/home/crimsonking/Desktop/MyHouseRPi/include/door_handler.h
+
+/home/crimsonking/Desktop/MyHouseRPi/lib/gpio_handler.c
+../include/gpio_handler.h
+/home/crimsonking/Desktop/MyHouseRPi/include/gpio_handler.h
+
+/home/crimsonking/Desktop/MyHouseRPi/lib/light_handler.c
+../include/light_handler.h
+/home/crimsonking/Desktop/MyHouseRPi/include/light_handler.h
+

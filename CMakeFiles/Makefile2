@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/crimsonking/Desktop/MyHouseRPi
 # Target rules for target CMakeFiles/MyHouse.dir
 
 # All Build rule for target.
-CMakeFiles/MyHouse.dir/all: lib/CMakeFiles/libmyhouserpi.dir/all
+CMakeFiles/MyHouse.dir/all: lib/CMakeFiles/myhouserpi.dir/all
 	$(MAKE) -f CMakeFiles/MyHouse.dir/build.make CMakeFiles/MyHouse.dir/depend
 	$(MAKE) -f CMakeFiles/MyHouse.dir/build.make CMakeFiles/MyHouse.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/crimsonking/Desktop/MyHouseRPi/CMakeFiles --progress-num=1,2 "Built target MyHouse"
@@ -100,12 +100,12 @@ clean: CMakeFiles/MyHouse.dir/clean
 # Directory level rules for directory lib
 
 # Convenience name for "all" pass in the directory.
-lib/all: lib/CMakeFiles/libmyhouserpi.dir/all
+lib/all: lib/CMakeFiles/myhouserpi.dir/all
 
 .PHONY : lib/all
 
 # Convenience name for "clean" pass in the directory.
-lib/clean: lib/CMakeFiles/libmyhouserpi.dir/clean
+lib/clean: lib/CMakeFiles/myhouserpi.dir/clean
 
 .PHONY : lib/clean
 
@@ -115,39 +115,39 @@ lib/preinstall:
 .PHONY : lib/preinstall
 
 #=============================================================================
-# Target rules for target lib/CMakeFiles/libmyhouserpi.dir
+# Target rules for target lib/CMakeFiles/myhouserpi.dir
 
 # All Build rule for target.
-lib/CMakeFiles/libmyhouserpi.dir/all:
-	$(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/depend
-	$(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/crimsonking/Desktop/MyHouseRPi/CMakeFiles --progress-num=3,4,5,6 "Built target libmyhouserpi"
-.PHONY : lib/CMakeFiles/libmyhouserpi.dir/all
+lib/CMakeFiles/myhouserpi.dir/all:
+	$(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/depend
+	$(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/crimsonking/Desktop/MyHouseRPi/CMakeFiles --progress-num=3,4,5,6 "Built target myhouserpi"
+.PHONY : lib/CMakeFiles/myhouserpi.dir/all
 
 # Include target in all.
-all: lib/CMakeFiles/libmyhouserpi.dir/all
+all: lib/CMakeFiles/myhouserpi.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-lib/CMakeFiles/libmyhouserpi.dir/rule: cmake_check_build_system
+lib/CMakeFiles/myhouserpi.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/libmyhouserpi.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/myhouserpi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 0
-.PHONY : lib/CMakeFiles/libmyhouserpi.dir/rule
+.PHONY : lib/CMakeFiles/myhouserpi.dir/rule
 
 # Convenience name for target.
-libmyhouserpi: lib/CMakeFiles/libmyhouserpi.dir/rule
+myhouserpi: lib/CMakeFiles/myhouserpi.dir/rule
 
-.PHONY : libmyhouserpi
-
-# clean rule for target.
-lib/CMakeFiles/libmyhouserpi.dir/clean:
-	$(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/clean
-.PHONY : lib/CMakeFiles/libmyhouserpi.dir/clean
+.PHONY : myhouserpi
 
 # clean rule for target.
-clean: lib/CMakeFiles/libmyhouserpi.dir/clean
+lib/CMakeFiles/myhouserpi.dir/clean:
+	$(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/clean
+.PHONY : lib/CMakeFiles/myhouserpi.dir/clean
+
+# clean rule for target.
+clean: lib/CMakeFiles/myhouserpi.dir/clean
 
 .PHONY : clean
 

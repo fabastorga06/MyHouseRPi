@@ -12,7 +12,7 @@
 /home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/install.dir
 /home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/package.dir
 /home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/package_source.dir
-/home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/libmyhouserpi.dir
+/home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/myhouserpi.dir
 /home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/edit_cache.dir
 /home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/rebuild_cache.dir
 /home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/list_install_components.dir

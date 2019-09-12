@@ -217,6 +217,9 @@ libmyhouserpi_LIB_DEPENDS:STATIC=
 //Value Computed by CMake
 myhouserpi_BINARY_DIR:STATIC=/home/crimsonking/Desktop/MyHouseRPi
 
+//Dependencies for target
+myhouserpi_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 myhouserpi_SOURCE_DIR:STATIC=/home/crimsonking/Desktop/MyHouseRPi
 

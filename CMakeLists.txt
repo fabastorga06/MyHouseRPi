@@ -14,7 +14,7 @@ include_directories(${PROJECT_SOURCE_DIR}/lib)
 add_executable (MyHouse main.c)
 
 #link against required libraries
-target_link_libraries(MyHouse libmyhouserpi)
+target_link_libraries(MyHouse myhouserpi)
 
 #install the binary
 install (TARGETS MyHouse DESTINATION bin)

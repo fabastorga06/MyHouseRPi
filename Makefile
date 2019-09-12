@@ -192,17 +192,17 @@ MyHouse/fast:
 .PHONY : MyHouse/fast
 
 #=============================================================================
-# Target rules for targets named libmyhouserpi
+# Target rules for targets named myhouserpi
 
 # Build rule for target.
-libmyhouserpi: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libmyhouserpi
-.PHONY : libmyhouserpi
+myhouserpi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 myhouserpi
+.PHONY : myhouserpi
 
 # fast build rule for target.
-libmyhouserpi/fast:
-	$(MAKE) -f lib/CMakeFiles/libmyhouserpi.dir/build.make lib/CMakeFiles/libmyhouserpi.dir/build
-.PHONY : libmyhouserpi/fast
+myhouserpi/fast:
+	$(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/build
+.PHONY : myhouserpi/fast
 
 main.o: main.c.o
 
@@ -246,7 +246,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
-	@echo "... libmyhouserpi"
+	@echo "... myhouserpi"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
