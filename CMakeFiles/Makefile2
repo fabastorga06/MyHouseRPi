@@ -76,7 +76,7 @@ all: CMakeFiles/MyHouse.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MyHouse.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MyHouse.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 0
 .PHONY : CMakeFiles/MyHouse.dir/rule
@@ -121,7 +121,7 @@ lib/preinstall:
 lib/CMakeFiles/myhouserpi.dir/all:
 	$(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/depend
 	$(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/crimsonking/Desktop/MyHouseRPi/CMakeFiles --progress-num=3,4,5,6 "Built target myhouserpi"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/crimsonking/Desktop/MyHouseRPi/CMakeFiles --progress-num=3,4,5,6,7 "Built target myhouserpi"
 .PHONY : lib/CMakeFiles/myhouserpi.dir/all
 
 # Include target in all.
@@ -131,7 +131,7 @@ all: lib/CMakeFiles/myhouserpi.dir/all
 
 # Build rule for subdir invocation for target.
 lib/CMakeFiles/myhouserpi.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/myhouserpi.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/crimsonking/Desktop/MyHouseRPi/CMakeFiles 0
 .PHONY : lib/CMakeFiles/myhouserpi.dir/rule

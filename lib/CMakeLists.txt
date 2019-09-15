@@ -3,11 +3,12 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 #set the proper macros
 set(LIBRARY_NAME myhouserpi)
-set(SRC_FILES gpio_handler.c door_handler.c light_handler.c)
+set(SRC_FILES gpio_handler.c door_handler.c light_handler.c camera_handler.c)
 set(INCLUDE_FILES 
     ${CMAKE_CURRENT_SOURCE_DIR}/../include/gpio_handler.h 
     ${CMAKE_CURRENT_SOURCE_DIR}/../include/light_handler.h
     ${CMAKE_CURRENT_SOURCE_DIR}/../include/door_handler.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/../include/camera_handler.h
 )
 
 #add the library

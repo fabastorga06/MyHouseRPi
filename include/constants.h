@@ -19,13 +19,14 @@
 
 /****** Util constants *******/
 #define OK "ok"
-#define ERROR "error"
 
 #define IN "in"
 #define OUT "out"
 
 #define ON "1"
 #define OFF "0"
+
+#define CMD_WEBCAM "fswebcam -r 1280x720 --no-banner -d /dev/video0 myhouse.jpg"
 
 #define BUFFER_SIZE 1024
 

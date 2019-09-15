@@ -58,6 +58,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/crimsonking/Desktop/MyHouseRPi/lib/../include/gpio_handler.h"
     "/home/crimsonking/Desktop/MyHouseRPi/lib/../include/light_handler.h"
     "/home/crimsonking/Desktop/MyHouseRPi/lib/../include/door_handler.h"
+    "/home/crimsonking/Desktop/MyHouseRPi/lib/../include/camera_handler.h"
     )
 endif()
 

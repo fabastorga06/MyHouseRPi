@@ -193,6 +193,33 @@ myhouserpi/fast:
 	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/build
 .PHONY : myhouserpi/fast
 
+camera_handler.o: camera_handler.c.o
+
+.PHONY : camera_handler.o
+
+# target to build an object file
+camera_handler.c.o:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/camera_handler.c.o
+.PHONY : camera_handler.c.o
+
+camera_handler.i: camera_handler.c.i
+
+.PHONY : camera_handler.i
+
+# target to preprocess a source file
+camera_handler.c.i:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/camera_handler.c.i
+.PHONY : camera_handler.c.i
+
+camera_handler.s: camera_handler.c.s
+
+.PHONY : camera_handler.s
+
+# target to generate assembly for a file
+camera_handler.c.s:
+	cd /home/crimsonking/Desktop/MyHouseRPi && $(MAKE) -f lib/CMakeFiles/myhouserpi.dir/build.make lib/CMakeFiles/myhouserpi.dir/camera_handler.c.s
+.PHONY : camera_handler.c.s
+
 door_handler.o: door_handler.c.o
 
 .PHONY : door_handler.o
@@ -289,6 +316,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
+	@echo "... camera_handler.o"
+	@echo "... camera_handler.i"
+	@echo "... camera_handler.s"
 	@echo "... door_handler.o"
 	@echo "... door_handler.i"
 	@echo "... door_handler.s"

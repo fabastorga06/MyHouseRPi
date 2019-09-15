@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/crimsonking/Desktop/MyHouseRPi/include/camera_handler.h
+stdio.h
+-
+stdlib.h
+-
+../include/constants.h
+/home/crimsonking/Desktop/MyHouseRPi/include/constants.h
+
 /home/crimsonking/Desktop/MyHouseRPi/include/constants.h
 
 /home/crimsonking/Desktop/MyHouseRPi/include/door_handler.h
@@ -29,6 +37,10 @@ unistd.h
 /home/crimsonking/Desktop/MyHouseRPi/include/constants.h
 ../include/gpio_handler.h
 /home/crimsonking/Desktop/MyHouseRPi/include/gpio_handler.h
+
+/home/crimsonking/Desktop/MyHouseRPi/lib/camera_handler.c
+../include/camera_handler.h
+/home/crimsonking/Desktop/MyHouseRPi/include/camera_handler.h
 
 /home/crimsonking/Desktop/MyHouseRPi/lib/door_handler.c
 ../include/door_handler.h

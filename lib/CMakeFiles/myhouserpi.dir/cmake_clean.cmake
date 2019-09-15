@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/myhouserpi.dir/gpio_handler.c.o"
   "CMakeFiles/myhouserpi.dir/door_handler.c.o"
   "CMakeFiles/myhouserpi.dir/light_handler.c.o"
+  "CMakeFiles/myhouserpi.dir/camera_handler.c.o"
   "libmyhouserpi.pdb"
   "libmyhouserpi.so"
 )

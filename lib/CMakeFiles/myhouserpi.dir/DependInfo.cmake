@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/crimsonking/Desktop/MyHouseRPi/lib/camera_handler.c" "/home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/myhouserpi.dir/camera_handler.c.o"
   "/home/crimsonking/Desktop/MyHouseRPi/lib/door_handler.c" "/home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/myhouserpi.dir/door_handler.c.o"
   "/home/crimsonking/Desktop/MyHouseRPi/lib/gpio_handler.c" "/home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/myhouserpi.dir/gpio_handler.c.o"
   "/home/crimsonking/Desktop/MyHouseRPi/lib/light_handler.c" "/home/crimsonking/Desktop/MyHouseRPi/lib/CMakeFiles/myhouserpi.dir/light_handler.c.o"

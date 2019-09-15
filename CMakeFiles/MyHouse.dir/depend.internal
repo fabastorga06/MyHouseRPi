@@ -3,6 +3,7 @@
 
 CMakeFiles/MyHouse.dir/main.c.o
  /home/crimsonking/Desktop/MyHouseRPi/main.c
+ include/camera_handler.h
  include/constants.h
  include/door_handler.h
  include/gpio_handler.h

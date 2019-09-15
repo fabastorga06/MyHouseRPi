@@ -25,6 +25,16 @@ string.h
 /home/crimsonking/Desktop/include/light_handler.h
 ../include/door_handler.h
 /home/crimsonking/Desktop/include/door_handler.h
+../include/camera_handler.h
+/home/crimsonking/Desktop/include/camera_handler.h
+
+include/camera_handler.h
+stdio.h
+-
+stdlib.h
+-
+../include/constants.h
+include/constants.h
 
 include/constants.h
 

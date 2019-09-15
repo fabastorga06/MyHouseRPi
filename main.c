@@ -8,6 +8,7 @@
 #include "../include/constants.h"
 #include "../include/light_handler.h"
 #include "../include/door_handler.h"
+#include "../include/camera_handler.h"
 
 void light_manager(int socket, char* gpio, unsigned short on)
 {
@@ -51,6 +52,15 @@ void house_alert(int socket, char* report)
     }
 }
 
+void check_house_by_camera(int socket, char* image) 
+{
+    take_picture_house(image);
+    if (write(socket, image, strlen(image)) < 0)
+    {
+        perror("Error: writing on socket failed.");
+    }
+}
+
 int main(int argc, char** argv ) 
 { 
     if (argc == 1) {
@@ -65,6 +75,7 @@ int main(int argc, char** argv )
     int addrlen = sizeof(address); 
     char msg_rcv[BUFFER_SIZE] = {0}; 
     char* house_report = malloc( sizeof(char) * REPORT_SIZE);
+    char* img = NULL;
        
     /****************** Create socket ********************************/
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)  { 
@@ -110,7 +121,7 @@ int main(int argc, char** argv )
 
         switch (atoi(msg_rcv)) {
 
-            /******************** LIGHTS ON/OFF ******************************/
+    /******************** LIGHTS ON/OFF *******************************************/
             case LIGHT1_ON:
                 puts("Light 1 ON\n");
                 light_manager(my_house_socket, LIGHT1_GPIO, TRUE);            
@@ -171,13 +182,16 @@ int main(int argc, char** argv )
             
             /******************** DOORS STATUS OPEN/CLOSE ******************************/
             case HOUSE_STATUS:
-                puts("Door 1 OPEN\n");
+                puts("Checking doors...\n");
                 house_alert(my_house_socket, house_report);            
                 break;         
 
             /*********************** WEBCAM ***********************************/
-            case WEBCAM:                           
-                break;    
+            case WEBCAM:       
+                puts("Checking house...\n");
+                check_house_by_camera(my_house_socket, img);
+                puts("Picture taken.");
+                break;                    
             
             default:
                 break;
@@ -187,6 +201,7 @@ int main(int argc, char** argv )
     }
     disable_lights();
     disable_doors();
+    free(img);
     close(my_house_socket);
     return 0; 
 } 
