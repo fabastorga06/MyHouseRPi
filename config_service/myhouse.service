@@ -1,10 +1,8 @@
-*** Este archivo se mueve a /etc/systemd/system
-*** Borrar estos comentarios ***
 [Unit]
-Description=my house startup
+Description=My house w/ raspberry pi: startup
 
 [Service]
-ExecStart=/usr/local/sbin/myhouse.sh
+ExecStart=/usr/local/sbin/myhouse
 
 [Install]
 WantedBy=multi-user.target
