@@ -54,10 +54,11 @@ void house_alert(int socket, char* report)
 
 void check_house_by_camera(int socket, char* image) 
 {
-    take_picture_house(image);
-    if (write(socket, image, strlen(image)) < 0)
-    {
-        perror("Error: writing on socket failed.");
+    size_t img_size = 0;
+    image = take_picture_house(&img_size);
+    printf("IMAGE: %s\n", image);
+    if (write(socket, image, img_size) < 0) {
+        perror("Writing on socket failed.");
     }
 }
 
@@ -67,7 +68,7 @@ int main(int argc, char** argv )
         puts("Error: insert port number");
         return 0;
     }
-    int _port = atoi(argv[1]);
+    int port = atoi(argv[1]);
 
     int server_fd, my_house_socket, valread; 
     struct sockaddr_in address; 
@@ -76,6 +77,7 @@ int main(int argc, char** argv )
     char msg_rcv[BUFFER_SIZE] = {0}; 
     char* house_report = malloc( sizeof(char) * REPORT_SIZE);
     char* img = NULL;
+    printf("POINTERIMG: %p\n", img);
        
     /****************** Create socket ********************************/
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)  { 
@@ -92,7 +94,7 @@ int main(int argc, char** argv )
 
     address.sin_family = AF_INET; 
     address.sin_addr.s_addr = INADDR_ANY; 
-    address.sin_port = htons( _port ); 
+    address.sin_port = htons( port ); 
        
     /**********  Attach socket to the port **************************/ 
     if (bind(server_fd, (struct sockaddr *)&address,  

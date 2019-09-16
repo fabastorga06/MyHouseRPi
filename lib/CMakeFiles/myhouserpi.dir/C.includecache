@@ -11,6 +11,8 @@ stdio.h
 -
 stdlib.h
 -
+string.h
+-
 ../include/constants.h
 /home/crimsonking/Desktop/MyHouseRPi/include/constants.h
 

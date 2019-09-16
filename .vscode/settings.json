@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "constants.h": "c",
-        "socket.h": "c"
+        "socket.h": "c",
+        "camera_handler.h": "c"
     }
 }
