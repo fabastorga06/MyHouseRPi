@@ -2,6 +2,7 @@ import base64
 import sys
 import telnetlib
 import os
+from fpdf import FPDF
 
 tn_ip = "localhost"
 tn_port = "5005"
@@ -80,3 +81,12 @@ def turn_on_lights():
 
 def turn_off_lights():
     message = send_msg("12")
+
+def createPDF(report):
+    pdf = FPDF(orientation='P', unit='mm', format='A4')
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    pdf.cell(0, 10, txt="MY HOUSE RPi STATUS REPORT", ln=1)
+    for i in range(9):
+        pdf.cell(0, 10, txt=report[i], ln=1)
+    pdf.output("house_report.pdf")
