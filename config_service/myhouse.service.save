@@ -1,0 +1,6 @@
+[Unit]
+Description=My house w/ raspberry pi: startup
+
+[Service]
+ExecStart=/usr/local/sbin/myhouseInstall]
+WantedBy=multi-user.target
