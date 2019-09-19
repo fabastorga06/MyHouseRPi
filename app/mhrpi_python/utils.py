@@ -80,6 +80,3 @@ def turn_on_lights():
 
 def turn_off_lights():
     message = send_msg("12")
-
-
-check_house()
