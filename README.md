@@ -20,10 +20,13 @@ An user interface must open, like the following window:
 
 ![gui](https://github.com/fabastorga06/MyHouseRPi/blob/master/gui.jpg)
 
-Next step is to execute C server inside your Raspberry Pi. So you have to compile first, remember to make a cross-compilation for the device architecture. Then execute it with a port as parameter: 
+Next step is to execute C server inside your Raspberry Pi. So you have to compile first, remember to make a cross-compilation for the device architecture: 
+
 `
 $ make
 `
+
+Then execute it with a port as parameter:
 
 `
 $ sudo ./MyHouse <port>
