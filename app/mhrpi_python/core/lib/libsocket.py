@@ -11,7 +11,7 @@ def send_msg(cmd):
     try:
         tn = telnetlib.Telnet(tn_ip, tn_port, 15)
     except:
-        print ("Unable to connect to Telnet server: " + tn_ip)
+        print ("Unable to connect to server: " + tn_ip)
         return
     tn.write(cmd.encode('ascii') + b"\n")
     response = ""
