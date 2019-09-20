@@ -19,3 +19,14 @@ $ python app.py
 An user interface must open, like the following window:
 
 ![gui](https://github.com/fabastorga06/MyHouseRPi/blob/master/gui.jpg)
+
+Next step is to execute C server inside your Raspberry Pi. So you have to compile first, remember to make a cross-compilation for the device architecture. Then execute it with a port as parameter: 
+`
+$ make
+`
+
+`
+$ sudo ./MyHouse <port>
+`
+
+Now, you can use the program successfully.
