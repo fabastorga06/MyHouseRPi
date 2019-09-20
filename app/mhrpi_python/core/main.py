@@ -8,6 +8,10 @@
 
 from PyQt4 import QtCore, QtGui
 
+from core.lib.libsocket import *
+
+import os
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -115,6 +119,27 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        self.button_on.clicked.connect( lambda: change_light_mode("1") )
+        self.button_on_2.clicked.connect( lambda: change_light_mode("2") )
+        self.button_on_3.clicked.connect( lambda: change_light_mode("3") )
+        self.button_on_4.clicked.connect( lambda: change_light_mode("4") )
+        self.button_on_5.clicked.connect( lambda: change_light_mode("5") )
+
+        self.button_off.clicked.connect( lambda: change_light_mode("6") )
+        self.button_off_2.clicked.connect( lambda: change_light_mode("7") )
+        self.button_off_3.clicked.connect( lambda: change_light_mode("8") )
+        self.button_off_4.clicked.connect( lambda: change_light_mode("9") )
+        self.button_off_5.clicked.connect( lambda: change_light_mode("10") )
+
+        self.button_all_on.clicked.connect( turn_on_lights )
+        self.button_all_off.clicked.connect( turn_off_lights )
+
+        self.button_check.clicked.connect( check_house )
+
+        self.button_report.clicked.connect( self.fill_report_text_box )
+
+        self.button_pdf.clicked.connect( self.create_report_pdf )
+
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MyHouseRpi - Control", None))
         self.button_on.setText(_translate("MainWindow", "ON", None))
@@ -141,3 +166,13 @@ class Ui_MainWindow(object):
     def set_main_module(self, pmodule):
         self.main = pmodule
         self.main.hide()
+
+    def fill_report_text_box(self):
+        report = get_house_status()
+        for i in report:
+            self.text_box.append(i + '\n')
+
+    def create_report_pdf(self):
+        report = get_house_status()
+        createPDF(report)
+        os.system("atril house_report.pdf")

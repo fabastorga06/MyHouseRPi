@@ -4,7 +4,7 @@ import telnetlib
 import os
 from fpdf import FPDF
 
-tn_ip = "localhost"
+tn_ip = "192.168.1.101"
 tn_port = "5005"
 
 def send_msg(cmd):
@@ -55,7 +55,6 @@ def get_house_status():
         final_report += [isDoorOpen(status_list[i], doors)]
         doors += 1
 
-    print (final_report)
     return final_report
 
 
@@ -73,7 +72,6 @@ def change_light_mode(msg):
     except:
         print ("Error: invalid data")
 
-    print(lightMode)
     return lightMode
 
 def turn_on_lights():
