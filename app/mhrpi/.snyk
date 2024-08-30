@@ -1,0 +1,26 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:lodash:20180130':
+    - react-native-sockets > rnpm > lodash:
+        patched: '2024-08-30T03:19:54.171Z'
+        id: 'npm:lodash:20180130'
+        path: react-native-sockets > rnpm > lodash
+    - react-native-sockets > rnpm > rnpm-plugin-link > lodash:
+        patched: '2024-08-30T03:19:54.171Z'
+        id: 'npm:lodash:20180130'
+        path: react-native-sockets > rnpm > rnpm-plugin-link > lodash
+    - react-native-sockets > rnpm > rnpm-plugin-link > plist > xmlbuilder > lodash:
+        patched: '2024-08-30T03:19:54.171Z'
+        id: 'npm:lodash:20180130'
+        path: >-
+          react-native-sockets > rnpm > rnpm-plugin-link > plist > xmlbuilder >
+          lodash
+    - react-native-sockets > rnpm > rnpm-plugin-link > xcode > simple-plist > plist > xmlbuilder > lodash:
+        patched: '2024-08-30T03:19:54.171Z'
+        id: 'npm:lodash:20180130'
+        path: >-
+          react-native-sockets > rnpm > rnpm-plugin-link > xcode > simple-plist
+          > plist > xmlbuilder > lodash
